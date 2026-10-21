@@ -39,6 +39,9 @@ def cost_per_class(annual_cost, credits):
     classcost=(annual_cost/2) / (credits / CS1430_CREDITS * CS1430_MEETINGS_PER_SEMESTER)
     return classcost
 
+def cost_per_meeting(annual_cost):
+    meetingcost=(annual_cost/2) / (CS1430_MEETINGS_PER_SEMESTER)
+    return meetingcost
 
 # ---- PROGRAM ----
 
@@ -53,6 +56,7 @@ def main():
         print("3. cost per day")
         print("4. cost per credit")
         print("5. cost per class")
+        print("6. cost per CS1430 meeting")
         print("Q. Quit")
 
         choice = input("Choose an option: ")
@@ -69,6 +73,8 @@ def main():
             print("Cost per credit: ", f"{cost_per_credit(YearCost, Credits):.2f}")
         elif choice == "5":
             print("Cost per class: ", f"{cost_per_class(YearCost, Credits):.2f}")
+        elif choice == "6":
+            print("Cost per CS1430meeting: ", f"{cost_per_meeting(YearCost):.2f}")
         else:
             print("Invalid choice. Please try again.")
 
